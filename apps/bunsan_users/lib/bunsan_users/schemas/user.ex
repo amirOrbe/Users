@@ -32,7 +32,7 @@ defmodule BunsanUsers.User do
 
     def search_all do
         query = from u in BunsanUsers.User,
-        select: [u.name]
+        select: u
         BunsanUsers.Repo.all(query)
     end
 end
