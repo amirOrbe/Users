@@ -4,6 +4,9 @@ defmodule  BunsanUsersWeb.UserController do
     """
     use BunsanUsersWeb, :controller
     alias BunsanUsers.User
+
+    action_fallback BunsanUsersWeb.UserFallBackController
+
     def create(conn, %{"user" => user_params}) do
         chg = User.signup_changeset(%User{}, user_params)
         case chg.valid? do

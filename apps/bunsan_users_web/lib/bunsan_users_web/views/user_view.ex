@@ -1,6 +1,9 @@
 defmodule BunsanUsersWeb.UserView do
     use BunsanUsersWeb, :view
     alias BunsanUsersWeb.UserView    
+
+    
+
     def render("user.json", %{user: user}) do
         %{user: render("single_user.json", %{user: user})}
     end
